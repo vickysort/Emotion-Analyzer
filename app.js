@@ -27,8 +27,8 @@ require('./config/express')(app);
 
 var credentials = extend({
   version: 'v2-experimental',
-  username: '<username>',//
-  password: '<password>'//
+  username: 'bf41e046-75b1-493d-8530-b2c1956546d3',//
+  password: 'zkX5nxjDx28P'//
 }, bluemix.getServiceCreds('tone_analyzer'));
 
 

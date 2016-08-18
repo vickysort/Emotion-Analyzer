@@ -1,7 +1,7 @@
 ---
 declared-services:
   tone-analyzer-service-experimental:
-    label: tone_analyzer
+    label: Mail-Buddy
     plan: experimental
 applications:
 - services:

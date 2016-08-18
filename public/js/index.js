@@ -24,6 +24,7 @@
 
 // DOM id for the tone visualization
 var vizId = '#visualization';
+var temp, tempSubEmotion;
 
 /** @type {d3.map()} global word - category mapping data structure for highlighting interaction */
 var WORD_TO_CATEGORY = d3.map(),
@@ -100,8 +101,27 @@ $(document).ready(function() {
         //prepare the data
         processData(response);
         response.id = 'root';
+        if(response.children != null){
+        	temp = response.children[0];
+        	if(response.children[0] != null ){
+        		tempSubEmotion = response.children[0].children;
+        		tempSubEmotion.splice(0,1);
+        		temp.children = tempSubEmotion;
+    		}
+        	response.children= [];
+        	response.children.push(temp);
+        }
         CURRENT_TONE = response;
         doToneCheck(response, text);
+		$('.visualization').ready(function() {
+    		if(response.children[0].word_count == 0) {
+        		 $('#visualization').hide();
+        		 $('#visualizationSuccess').show();
+		    }else{
+		    	 $('#visualization').show();
+        		 $('#visualizationSuccess').hide();
+		    }
+		});
       })
       .fail(onAPIError)
       .always (function(){
@@ -166,11 +186,15 @@ $(document).ready(function() {
       if (ele.indexOf('_' + WORD_TRAIT_CORR_TYPE.negative) > 0)
         cateName = ele.substring(0, ele.indexOf('_' + WORD_TRAIT_CORR_TYPE.negative));
 
+
+	if(ele == 'Anger_positive' || ele == 'Negative_positive'){
       $('.' + ele).css('color', COLOR_SCHEMA[cateName]);
       $('.' + ele).css('border', "1px solid "+COLOR_SCHEMA[cateName]);
       $('.' + ele).css('padding', '0.2em 0.5em 0.2em 0.5em');
       $('.' + ele + ".replaceable").css('background-color', COLOR_SCHEMA[cateName]);
-      $('.' + ele + ".replaceable").css('color', 'white');
+      $('.' + ele + ".replaceable").css('color', 'black');
+  }
+
     });
 
     $('.matched-word').mouseover(function() {

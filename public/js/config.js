@@ -50,7 +50,10 @@ var COLOR_SCHEMA = {
 };
 
 var SAMPLE_TEXT = '' + 'Hi Team, \n\n' +
-  'I know the times are difficult! Our sales have been disappointing for the past three quarters for our data analytics product suite. We have a competitive data analytics product suite in the industry. But we need to do our job selling it! \n\n' +
-  'We need to acknowledge and fix our sales challenges. We can’t blame the economy for our lack of execution! We are missing critical sales opportunities. Our product  is in no way inferior to the competitor products. Our clients are hungry for analytical tools to improve their business outcomes. Economy has nothing to do with it. In fact, it is in times such as this, our clients want to get the insights they need to turn their businesses around. Let’s buckle up and execute. \n\n' +
-  'In summary, we have a competitive product, and a hungry market. We have to do our job to close the deals.\n\n' +
-  'Jennifer Baker\n' + 'Sales Leader, North-East Geo,\n' + 'Data Analytics Inc.';
+
+'These are difficult times! Our team has been performing poorly for the past two weeks. We very well know that we are being pessimistic in various aspects. We have a competitive product to deliver to the client. So we need to stop taking frequent breaks.  \n\n' + 
+'We need to understand our problems. I don\'t blame you for your poor performance. Our client is in agony, since we failed to deliver various modules we promised. Our schedule has nothing to do with it. In fact, in times like this, our clients are expecting us to perform well. So, lets get ready to show our efforts. \n\n' +
+'Finally, we have done a good job so far, and I expect us to continue to do so without being frustrated. So, Don\'t be hopeless. We have to close all the issues as soon as possible.  \n\n' + 
+'Team lead,\n' + 
+'Mail Buddy.\n\n';
+
